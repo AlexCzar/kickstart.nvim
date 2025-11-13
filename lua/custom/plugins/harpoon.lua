@@ -1,23 +1,4 @@
--- You can add your own plugins here or in other files in this directory!
---  I promise not to create any merge conflicts in this directory :)
---
--- See the kickstart.nvim README for more information
 return {
-  {
-    'jakewvincent/mkdnflow.nvim',
-    config = function()
-      require('mkdnflow').setup {
-        -- Config goes here; leave blank for defaults
-        to_do = {
-          symbols = { ' ', '-', 'x' },
-          update_parents = true,
-          not_started = ' ',
-          in_progress = '-',
-          complete = 'x',
-        },
-      }
-    end,
-  },
   {
     'ThePrimeagen/harpoon',
     branch = 'harpoon2',
@@ -66,17 +47,6 @@ return {
       vim.keymap.set('n', '<C-i>', function()
         toggle_telescope(harpoon:list())
       end, { desc = 'Open harpoon window' })
-    end,
-  },
-  {
-    'catppuccin/nvim',
-    name = 'catppuccin',
-    priority = 1000,
-    opts = {
-      transparent_background = true,
-    },
-    init = function()
-      vim.cmd.colorscheme 'catppuccin-mocha'
     end,
   },
 }
